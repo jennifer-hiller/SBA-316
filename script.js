@@ -23,9 +23,13 @@ document.getElementById("list").addEventListener("click", (event) => {
 const form1Elm = document.getElementById("form1");
 form1Elm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const inputElm = document.getElementById("name");
-  const name = inputElm.value;
-  alert(`Hello, ${name}!`);
+  const name = document.getElementById("name").value;
+  const lastName = document.getElementById("lastName").value;
+  if (lastName === "") {
+    alert("You need to add a last name");
+    return;
+  }
+  alert(`Hello, ${name} ${lastName}!`);
 });
 const radioElm = document.getElementById("modify");
 const checkBoxElm = document.getElementById("disable");
