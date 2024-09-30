@@ -30,9 +30,19 @@ form1Elm.addEventListener("submit", (event) => {
 const radioElm = document.getElementById("modify");
 const checkBoxElm = document.getElementById("disable");
 checkBoxElm.addEventListener("change", () => {
-  radioElm.disabled = checkBoxElm.checked;
+  if (checkBoxElm.checked) {
+    radioElm.setAttribute("disabled", true);
+  } else {
+    radioElm.removeAttribute("disabled");
+  }
 });
 const screenSizeButton = document.querySelector(".screenSizeButton");
 screenSizeButton.addEventListener("click", () => {
   alert(`The screen size is ${window.innerWidth}x${window.innerHeight}`);
+});
+document.getElementById("changeColor").addEventListener("click", () => {
+  const nextSibling = document.getElementById("changeColor").nextElementSibling;
+  nextSibling.style.color = `rgb(${Math.floor(
+    Math.random() * 255
+  )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
 });
