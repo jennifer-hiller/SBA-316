@@ -60,5 +60,4 @@ document.getElementById("changeColor").addEventListener("click", () => {
 });
 const htmlTemplate = document.getElementById("htmlTemplate"); // html templating
 const clonedTemplate = htmlTemplate.content.cloneNode(true);
-console.log(clonedTemplate);
 document.body.appendChild(clonedTemplate);
